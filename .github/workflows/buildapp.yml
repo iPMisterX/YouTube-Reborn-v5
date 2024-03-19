@@ -8,7 +8,7 @@ on:
     inputs:
       reborn_version:
         description: "The version of Reborn"
-        default: "4.2.3"
+        default: "4.2.6"
         required: true
         type: string
       decrypted_youtube_url:
@@ -18,7 +18,7 @@ on:
         type: string
       youtube_version:
         description: "The version of YouTube"
-        default: ""
+        default: "19.10.5"
         required: true
         type: string
       bundle_id:
