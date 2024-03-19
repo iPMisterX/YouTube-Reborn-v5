@@ -78,7 +78,10 @@ jobs:
       - name: Download iOS 16.2 SDK
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
-          svn checkout -q https://github.com/arichornlover/sdks/iPhoneOS16.2.sdk
+          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/arichornlover/sdks/
+          cd sdks
+          git sparse-checkout set --no-cone iPhoneOS16.2.sdk
+          git checkout
           mv *.sdk $THEOS/sdks
         env:
           THEOS: ${{ github.workspace }}/theos
